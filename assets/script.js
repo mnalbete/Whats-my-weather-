@@ -17,7 +17,7 @@ $(document).ready(function () {
       console.log(response);
 
       // current city search requirements
-
+      
       var cityLat = response.coord.lat;
       console.log(cityLat);
       var cityLon = response.coord.lon;
@@ -28,6 +28,8 @@ $(document).ready(function () {
       console.log(cityDate);
       var cityIcon = response.weather[0].icon;
       console.log(cityIcon);
+      var weatherIconURL = "http://openweathermap.org/img/w/"+ cityIcon +".png";
+      console.log(weatherIconURL);
       var cityTemp = (response.main.temp - 273.15) * 1.80 + 32;
       console.log(cityTemp);
       var cityHum = response.main.humidity;
@@ -35,15 +37,12 @@ $(document).ready(function () {
       var cityWind = response.wind.speed;
       console.log(cityWind);
       cityUVURL(cityLat, cityLon);
-
-      // for(var i = 0; i < cityIcon, i++){
-
-      // };
       
-
+      
       $("#searchedcityName").text(cityName); 
       $("#searchedcityDate").text(cityDate);
-      $("#searchedcityIcon").attr("src","http://openweathermap.org/img/w/" + cityIcon + ".png");
+      $("#searchedcityIcon").(weatherIconURL);
+      
       // temp hum and wind
       $("#searchedcityTemp").text(cityTemp);
       $("#searchedcityHum").text(cityHum);
