@@ -1,19 +1,16 @@
 $(document).ready(function () {
   var searchBtn = $("#searchButton");
 
-
   function buildQuaryURL() {
     var cityEL = $("#cityName").val();
     var searchedCity = localStorage.getItem("#cityName");
     var API_KEY = "0368fc91275f10ac609c0d8c6957a966";
     var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityEL + '&appid=' + API_KEY;
-
   
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-
 
       var cityLat = response.coord.lat;
       var cityLon = response.coord.lon;
@@ -26,16 +23,13 @@ $(document).ready(function () {
       var cityWind = response.wind.speed;
       cityUVURL(cityLat, cityLon);
 
-
       $("#searchedcityName").text(cityName);
       $("#searchedcityDate").text(cityDate);
       $("#searchedcityIcon").attr("src", weatherIconURL);
-      $("#searchedcityTemp").text(cityTemp.toFixed(2) + " °F");
-      $("#searchedcityHum").text(cityHum + "%");
-      $("#searchedcityWind").text(cityWind);
-
+      $("#searchedcityTemp").text("Temp: " + cityTemp.toFixed(2) + " °F");
+      $("#searchedcityHum").text("Humidity: " + cityHum + "%");
+      $("#searchedcityWind").text("Wind Speed: " + cityWind);
     });
-
   };
 
   function cityUVURL(cityLat, cityLon) {
@@ -49,7 +43,7 @@ $(document).ready(function () {
       // console.log(response);
       var cityUV = response.value;
 
-      $("#searchedcityUV").text(cityUV)
+      $("#searchedcityUV").text("UV Index: " + cityUV)
     });
   };
 
@@ -77,14 +71,12 @@ $(document).ready(function () {
         $("#fivedaydate" + i).text(dateOne);
         $("#fivedayIcon" + i).attr("src", dateOneIconURL);
         $("#fivedayTemp" + i).text("Temp: " + dateOneTemp.toFixed(2) + " °F");
-        $("#fivedayHum" + i).text("Humidity: : " + dateOneHum + "%");
+        $("#fivedayHum" + i).text("Humidity: " + dateOneHum + "%");
 
       }
 
     });
-  }
-
-
+  };
 
   // search button within form 
   searchBtn.on("click", function (event) {
@@ -92,12 +84,4 @@ $(document).ready(function () {
     buildQuaryURL();
     fivedayURL();
   });
-
-
-
-
-
-
-
-
 });

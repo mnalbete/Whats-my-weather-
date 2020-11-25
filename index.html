@@ -11,99 +11,94 @@
 </head>
 
 <body>
-    <div>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Weather Search Engine</h1>
-            </div>
-        </div>
-        <!-- column 1 and 2 -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <form action="">
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Search City Weather</label>
-                            <input type="text" class="form-control" id="cityName" placeholder="Name of city">
-                        </div>
-                        <button type="button" class="btn btn-primary" id="searchButton">Search</button>
-                    </form>
-                    <div>
-                        <ul id="searchedCity">City list</ul>
-                    </div>
-                </div>
 
-                <!-- current Weather Report -->
-                <div class="col">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col" id="searchedcityName"></div>
-                            <div class="col" id="searchedcityDate"></div>
-                            <img class="col" id="searchedcityIcon"></img>
-                        </div>
-                        <div class="row">
-                            <div class="col">Tempeture</div>
-                            <div class= "col" id="searchedcityTemp"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Humididty</div>
-                            <div class= "col" id="searchedcityHum"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Wind Speed</div>
-                            <div class= "col"  id="searchedcityWind"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">UV Index</div>
-                            <div class= "col" id="searchedcityUV"></div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <form action="">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Search City Weather</label>
+                        <input type="text" class="form-control" id="cityName" placeholder="Name of city">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+                </form>
+                <div>
+                    <ul id="searchedCity"></ul>
+                </div>
+            </div>
+            
+
+            <!-- current Weather Report -->
+            
+                <div class="card w-50">
+                    <div class="card-body">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col" id="searchedcityName"></div>
+                                    <div class="col" id="searchedcityDate"></div>
+                                    <img class="col" id="searchedcityIcon"></img>
+                                </div>
+                                <div class="row" id="searchedcityTemp"></div>
+                                <div class="row" id="searchedcityHum"></div>
+                                <div class="row" id="searchedcityWind"></div>
+                                <div class="row" id="searchedcityUV"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+           
             <!-- 5 day weather report -->
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div id="fivedaydate1"></div>
-                        <img id = "fivedayIcon1"></img>
-                        <div id= "fivedayTemp1"></div>
-                        <div id= "fivedayHum1"></div>
+                        <img id="fivedayIcon1"></img>
+                        <div id="fivedayTemp1"></div>
+                        <div id="fivedayHum1"></div>
                     </div>
                     <div class="col">
                         <div id="fivedaydate2"></div>
-                        <img id = "fivedayIcon2"></img>
-                        <div id= "fivedayTemp2"></div>
-                        <div id= "fivedayHum2"></div>
+                        <img id="fivedayIcon2"></img>
+                        <div id="fivedayTemp2"></div>
+                        <div id="fivedayHum2"></div>
                     </div>
                     <div class="col">
                         <div id="fivedaydate3"></div>
-                        <img id = "fivedayIcon3"></img>
-                        <div id= "fivedayTemp3"></div>
-                        <div id= "fivedayHum3"></div>
+                        <img id="fivedayIcon3"></img>
+                        <div id="fivedayTemp3"></div>
+                        <div id="fivedayHum3"></div>
                     </div>
                     <div class="col">
                         <div id="fivedaydate4"></div>
-                        <img id = "fivedayIcon4"></img>
-                        <div id= "fivedayTemp4"></div>
-                        <div id= "fivedayHum4"></div>
+                        <img id="fivedayIcon4"></img>
+                        <div id="fivedayTemp4"></div>
+                        <div id="fivedayHum4"></div>
                     </div>
                     <div class="col">
                         <div id="fivedaydate5"></div>
-                        <img id = "fivedayIcon5"></img>
-                        <div id= "fivedayTemp5"></div>
-                        <div id= "fivedayHum5"></div>
+                        <img id="fivedayIcon5"></img>
+                        <div id="fivedayTemp5"></div>
+                        <div id="fivedayHum5"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer></footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-            crossorigin="anonymous"></script>
-        <script src="./assets/script.js"></script>
+    </div>
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
