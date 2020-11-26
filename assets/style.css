@@ -1,6 +1,10 @@
 body {
     background-image: url(https://img.wallpapersafari.com/desktop/1680/1050/31/46/GgyrPf.jpg);
-}
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
 
 .weather-img {
     width: min-content;
