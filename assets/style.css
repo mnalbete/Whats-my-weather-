@@ -1,3 +1,7 @@
 body {
     background-image: url(https://img.wallpapersafari.com/desktop/1680/1050/31/46/GgyrPf.jpg);
 }
+
+.weather-img {
+    width: min-content;
+}

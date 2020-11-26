@@ -60,13 +60,14 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response.list);
 
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 7; i++) {
 
         var dateOne = moment().add(i, "days").startOf("day").format("MM/DD/YYYY");
         var dateOneIcon = response.list[i].weather[0].icon;
         var dateOneIconURL = "http://openweathermap.org/img/w/" + dateOneIcon + ".png";
         var dateOneTemp = (response.list[i].main.temp - 273.15) * 1.80 + 32;
         var dateOneHum = response.list[i].main.humidity;
+
 
         $("#fivedaydate" + i).text(dateOne);
         $("#fivedayIcon" + i).attr("src", dateOneIconURL);
