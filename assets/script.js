@@ -34,7 +34,7 @@ $(document).ready(function () {
 
   function cityUVURL(cityLat, cityLon) {
     var API_KEY = "0368fc91275f10ac609c0d8c6957a966";
-    var uvURL = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + cityLat + '&lon=' + cityLon + '&appid=' + API_KEY;
+    var uvURL = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + cityLat + '&lon=' + cityLon + '&appid=' + API_KEY;
 
     $.ajax({
       url: uvURL,
@@ -64,7 +64,7 @@ $(document).ready(function () {
 
         var dateOne = moment().add(i, "days").startOf("day").format("MM/DD/YYYY");
         var dateOneIcon = response.list[i].weather[0].icon;
-        var dateOneIconURL = "http://openweathermap.org/img/w/" + dateOneIcon + ".png";
+        var dateOneIconURL = "https://openweathermap.org/img/w/" + dateOneIcon + ".png";
         var dateOneTemp = (response.list[i].main.temp - 273.15) * 1.80 + 32;
         var dateOneHum = response.list[i].main.humidity;
 
